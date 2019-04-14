@@ -1,0 +1,60 @@
+.col-container{
+    float: left;
+}
+
+
+.cell {
+    border-color: rgb(56, 102, 155);
+    border-style: dotted;
+    border-width: 0 1 1 0;  
+    position: relative;
+}
+#comp-field-container .cell {
+    cursor: pointer;
+}
+.cell[data-y="0"]{
+    border-width: 1 1 1 0;
+}
+.cell[data-x="0"]{
+    border-width: 0 1 1 1;
+}
+
+.cell.is-taken-by-ship{
+    border-width: 1 1 1 1;
+    border-style: solid;
+    border-color: rgb(60, 123, 196);
+    background: rgb(60, 123, 196);
+}
+.cell.attacked {
+    /* border-color: rgb(245, 221, 3); */
+    /* border-style: solid; */
+    /* border-width: 2 2 2 2; */
+}
+.cell.is-taken-by-ship-and-attacked {
+    border-width: 1 1 1 1;
+    border-style: solid;
+    border-color: rgb(60, 123, 196);
+    background: rgb(60, 123, 196);
+}
+
+#root{
+    width: 90% ;
+    margin:   auto;
+    display: block;
+    clear: both;
+}
+
+.cell-content {
+    margin:auto;
+    position: absolute;
+    top:30%;
+    left:30%;
+}
+.top-buffer { margin-top:50px; }
+.field-container{
+    border: 2px solid rgb(60, 123, 196);
+    display: inline-block;
+}
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+  }

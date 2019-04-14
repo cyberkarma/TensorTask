@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    
+
+
+        <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="./css/contr/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" /> -->
+        <link href="./css/src/main.css" rel="stylesheet" type="text/css" />
+        <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                        <h3 id="player-name-header">Human</h3>
+                        <div id="player-field-container" class="field-container"></div>
+                </div>
+                <div class="col-md-4">
+                        <div class="row top-buffer"></div>
+                    <div class="row">
+                            <div id="" class="col-md-12">
+                                
+                                <div id="run-game-btn" class="btn btn-primary btn-lg m-t-2">Run</div>
+
+                                 
+                            </div>
+                    </div>
+                    <div class="row top-buffer"></div>
+                    <div class="row">
+                        <div id="status-bar" class="col-md-12">Click "Run" for begin...</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                        <h3 id="computer-name-header">Machine</h3>
+                        <div id="comp-field-container" class="field-container"></div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div id="debug-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-form" title="New Game" style="display:none;">
+            <p class="validateTips">All form fields are required.</p>
+           
+            <form>
+              <fieldset>
+                <label for="computer-name">Computer name</label>
+                <input type="text" name="computer-name" id="computer-name"   class="text ui-widget-content ui-corner-all">
+                <label for="player-name">Player name</label>
+                <input type="text" name="player-name" id="player-name"   class="text ui-widget-content ui-corner-all">
+ 
+
+              </fieldset>
+            </form>
+          </div>
+        
+    
+     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+     
+  <script src="js/src/sea-battle-app.js"></script> 
+    <script src="js/src/utils.js"></script>
+    <script src="js/src/cell.js"></script>
+    <script src="js/src/matrix.js"></script>
+    <script src="js/src/ship.js"></script>
+    <script src="js/src/cell-bank.js"></script>
+    <script src="js/src/field.js"></script>
+    <script src="js/src/player.js"></script>
+    
+    <script defer>
+        
+        
+        app=new SeaBattle.App({
+            'playerFieldContainer':$('#player-field-container'),
+            'compFieldContainer':$('#comp-field-container'),
+            'debug':false,
+            'runButton':$('#run-game-btn'),
+            'statusBar':$('#status-bar'),
+            'dialog':$( "#dialog-form" ),
+            'computerName':$('#computer-name-header'),
+            'playerName':$('#player-name-header')
+        });
+        app.run();
+        
+        
+    </script>
+</body>
+
+</html>
